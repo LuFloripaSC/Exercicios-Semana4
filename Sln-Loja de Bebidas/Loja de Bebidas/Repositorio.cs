@@ -16,11 +16,27 @@
         {
             refrigerante.Add(Refrigerante);
         }
-        public static void AdicionarBebida(Bebida bebida)
+        public static void AdicionarBebida()
         {
+            Console.WriteLine("Qual o ID da bebida que deseja adicionar?");
+            int idBebidaNova = int.Parse(Console.ReadLine());
+            Console.WriteLine("Qual o nome da bebida que deseja adicionar?");
+            string bebidaNova = Console.ReadLine();
+            Console.WriteLine("Quantos ml possui a bebida?");
+            decimal mililitro = decimal.Parse(Console.ReadLine());
+            Console.WriteLine("Qual o valor da bebida?");
+            decimal valorBebida = decimal.Parse(Console.ReadLine());
+
+            Bebida bebida = new Bebida();
+            bebida.Id = 1;
+            bebida.Mililitro = mililitro;
+            bebida.NomeBebida = bebidaNova;
+            bebida.ValorCompra = valorBebida;
             _bebida.Add(bebida);
+            Console.WriteLine("Bebida adicionada com sucesso! Pressione uma teclar para continuar...");
+            Console.ReadLine();
         }
-        internal static void AlterarBebida(Bebida bebida)
+        internal static void AlterarBebida()
         {
             Console.WriteLine("Qual o nome da bebida que deseja alterar?");
             string bebidaAntiga = Console.ReadLine();
@@ -69,8 +85,10 @@
             Console.WriteLine("Bebidas: ");
             foreach (Bebida Bebida in _bebida)
             {
-                Console.WriteLine($"{Bebida}");
+                Console.WriteLine($"Id:{Bebida.Id} - Nome: {Bebida.NomeBebida} - Quantidade ml: {Bebida.Mililitro} - Preço R$: {Bebida.ValorCompra.ToString("N2")}");
             }
+            Console.WriteLine("Acima estão as bebidas cadastradas no sistema! Pressione uma tecla para continuar... ");
+            Console.ReadLine();
         }
         public static void ImprimirSuco()
         {

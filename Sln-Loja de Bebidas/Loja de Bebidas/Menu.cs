@@ -19,7 +19,8 @@ namespace Loja_de_Bebidas
         public static int DigiteOpcaoDesejada() 
         { 
             try
-            {   Console.WriteLine("Digite a opção desejada");
+            {   
+                Console.WriteLine("Digite a opção desejada");
                 Console.WriteLine("1- Inserir Bebida");
                 Console.WriteLine("2- Alterar Bebida");
                 Console.WriteLine("3- Excluir Bebida");

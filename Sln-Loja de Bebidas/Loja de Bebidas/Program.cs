@@ -1,8 +1,5 @@
 ﻿using Loja_de_Bebidas;
 
-Menu.DisplayInicial();
-Menu.DigiteOpcaoDesejada();
-
 bool manterMenuAberto = true;
 
 while(manterMenuAberto)
@@ -12,31 +9,16 @@ while(manterMenuAberto)
     switch (opcao)
     {
         case 1:
-            Bebida bebida = new Bebida();
-            bebida.Id = 1;
-            bebida.Mililitro = 350;
-            bebida.NomeBebida = "Cerveja";
-            bebida.ValorCompra = 5;
-            Repositorio.AdicionarBebida(bebida);
+            Repositorio.AdicionarBebida();
             manterMenuAberto = Menu.ReiniciarDisplayConsole();
             break;
 
         case 2:
-            Bebida bebida1 = new Bebida();
-            bebida1.Id = 2;
-            bebida1.Mililitro = 500;
-            bebida1.NomeBebida = "Refrigerante";
-            bebida1.ValorCompra = 10;
-            Repositorio.AlterarBebida(bebida1);
+            Repositorio.AlterarBebida();
             manterMenuAberto = Menu.ReiniciarDisplayConsole();
             break;
 
         case 3:
-            Bebida bebida2 = new Bebida();
-            bebida2.Id = 1;
-            bebida2.Mililitro = 200;
-            bebida2.NomeBebida = "Suco";
-            bebida2.ValorCompra = 2;
             Repositorio.ExcluirBebida();
             manterMenuAberto = Menu.ReiniciarDisplayConsole();
             break;
